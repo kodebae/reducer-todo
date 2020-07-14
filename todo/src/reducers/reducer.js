@@ -12,6 +12,10 @@ export const reducer = (state, action) => {
             todos: state.todos.map((t, idx) => idx === action.idx ? { ...t, completed: !t.completed } : t 
             )
         };
+        case 'COMPLETED':
+            return state.filter(completeTask => !completeTask.completed)
+            
+
     default:
         return state;
     }
